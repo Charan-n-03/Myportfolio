@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charan N — React &amp; Full-Stack Developer</title>
+    <meta
+      name="description"
+      content="Portfolio of Charan N, aspiring Software &amp; Full-Stack Developer specializing in React.js, Python, Flask, MySQL, and modern web applications. Creator of TasteGo."
+    />
+    <meta name="author" content="Charan N" />
+    <meta name="keywords" content="Charan N, React Developer, Full-Stack Developer, Software Developer, Bengaluru, TasteGo, Web Development, Python, Flask, JavaScript" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Charan N — React &amp; Full-Stack Developer" />
+    <meta
+      property="og:description"
+      content="Explore projects, technical skills, and background of Charan N. Early-career software developer passionate about clean UI, robust backend architectures, and practical web solutions."
+    />
+    <meta property="og:site_name" content="Charan N Portfolio" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Charan N — React &amp; Full-Stack Developer" />
+    <meta
+      name="twitter:description"
+      content="Explore projects, technical skills, and background of Charan N. Early-career software developer passionate about clean UI, robust backend architectures, and practical web solutions."
+    />
+
+    <!-- Theme initialization to prevent flash -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('portfolio-theme');
+          var theme = saved;
+          if (!theme || (theme !== 'dark' && theme !== 'light')) {
+            theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', theme);
+          document.documentElement.classList.toggle('dark', theme === 'dark');
+          document.documentElement.classList.toggle('light', theme === 'light');
+        } catch (e) {}
+      })();
+    </script>
+
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Charan N",
+        "jobTitle": "React & Full-Stack Developer",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bengaluru",
+          "addressCountry": "India"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Government Engineering College, Ramanagar"
+        },
+        "sameAs": [
+          "https://github.com/Charan-n-03",
+          "https://www.linkedin.com/in/charann03/",
+          "https://leetcode.com/u/charanu03/"
+        ]
+      }
+    </script>
+
+    <!-- Google Fonts for Editorial + Monospace typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

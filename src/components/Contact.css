@@ -1,0 +1,118 @@
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 860px) {
+  .contact-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 3.5rem;
+  }
+}
+
+.contact-info-card {
+  padding: 2rem;
+  border-radius: 12px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-email-box {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-email-link {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  word-break: break-all;
+  transition: opacity var(--transition-fast);
+}
+
+.contact-email-link:hover {
+  opacity: 0.8;
+}
+
+.contact-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.contact-profiles-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-profile-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-fast);
+}
+
+.contact-profile-card:hover {
+  border-color: var(--border-hover);
+  background-color: var(--bg-surface-hover);
+  transform: translateX(2px);
+}
+
+.contact-profile-left {
+  display: flex;
+  align-items: center;
+  gap: 0.875rem;
+}
+
+.contact-profile-title {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.contact-profile-username {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+/* Footer */
+.portfolio-footer {
+  padding-top: 3rem;
+  padding-bottom: 3.5rem;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  color: var(--text-tertiary);
+  font-size: 0.875rem;
+  transition: var(--transition-theme);
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .footer-content {
+    flex-direction: row;
+    text-align: left;
+  }
+}
