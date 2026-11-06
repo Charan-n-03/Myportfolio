@@ -1,4 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+'use client';
+
+import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 import './Lanyard.css';
@@ -92,7 +94,8 @@ vec3 foilShard(vec2 p) {
   vec2 id = base;
   for (int j = -1; j <= 1; j++) {
     for (int i = -1; i <= 1; i++) {
-      vec2 cell = base + vec2(foilHash(cell), foilHash(cell + 7.31)) * 0.9 + 0.05;
+      vec2 cell = base + vec2(float(i), float(j));
+      vec2 site = cell + vec2(foilHash(cell), foilHash(cell + 7.31)) * 0.9 + 0.05;
       float d = length(site - p);
       if (d < best) {
         edge = best;
@@ -725,7 +728,6 @@ const Lanyard = ({
   const containerRef = useRef(null);
   const settingsRef = useRef(null);
   const applyRef = useRef(null);
-  const [webglSupported, setWebglSupported] = useState(true);
 
   settingsRef.current = {
     frontImage,
@@ -762,14 +764,8 @@ const Lanyard = ({
     try {
       renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
     } catch {
-      setWebglSupported(false);
       return undefined;
     }
-    if (!renderer || !renderer.getContext()) {
-      setWebglSupported(false);
-      return undefined;
-    }
-
     renderer.setClearColor(0x000000, 0);
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.NeutralToneMapping;
@@ -1292,22 +1288,6 @@ const Lanyard = ({
       if (canvas.parentNode) canvas.parentNode.removeChild(canvas);
     };
   }, []);
-
-  if (!webglSupported) {
-    return (
-      <div className={`lanyard ${className}`.trim()} style={style}>
-        <div className="lanyard-fallback">
-          <div className="lanyard-fallback-card">
-            {frontImage ? (
-              <img src={frontImage} alt="Profile card fallback" className="lanyard-fallback-img" />
-            ) : (
-              <div className="lanyard-fallback-placeholder">Charan N</div>
-            )}
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return <div ref={containerRef} className={`lanyard ${className}`.trim()} style={style} />;
 };

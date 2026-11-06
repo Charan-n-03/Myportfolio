@@ -1,19 +1,20 @@
-import { lazy, Suspense } from 'react';
-import { ArrowDownRight, Mail, MapPin } from 'lucide-react';
-import { GithubIcon, LinkedinIcon, LeetCodeIcon } from './Icons';
-import { useTheme } from '../context/ThemeContext';
-import { personalInfo } from '../data/portfolioData';
-import TechText from './react-bits/TechText';
-import './Hero.css';
+import { lazy, Suspense } from "react";
+import { ArrowDownRight, Mail, MapPin } from "lucide-react";
+import { GithubIcon, LinkedinIcon, LeetCodeIcon } from "./Icons";
+import { useTheme } from "../context/ThemeContext";
+import { personalInfo } from "../data/portfolioData";
+import TechText from "./react-bits/TechText";
+import "./Hero.css";
+import image1 from "../components/assets/charanProfile.jpeg"
 
 // Lazy-load the heavy 3D WebGL component for instant hero rendering
-const Lanyard = lazy(() => import('./react-bits/Lanyard'));
+const Lanyard = lazy(() => import("./react-bits/Lanyard"));
 
 export default function Hero() {
   const { theme } = useTheme();
 
-  const textColor = theme === 'dark' ? '#f4f4f6' : '#121214';
-  const accentColor = theme === 'dark' ? '#a0a0ab' : '#71717a';
+  const textColor = theme === "dark" ? "#f4f4f6" : "#121214";
+  const accentColor = theme === "dark" ? "#a0a0ab" : "#71717a";
 
   return (
     <section className="hero-section" id="hero" aria-labelledby="hero-name">
@@ -24,8 +25,14 @@ export default function Hero() {
             <div className="hero-meta-badge">
               <span className="hero-status-dot" aria-hidden="true" />
               <span>Available for Software Developer Roles</span>
-              <span style={{ color: 'var(--border-hover)' }}>|</span>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+              <span style={{ color: "var(--border-hover)" }}>|</span>
+              <span
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.25rem",
+                }}
+              >
                 <MapPin size={12} /> {personalInfo.location}
               </span>
             </div>
@@ -146,20 +153,26 @@ export default function Hero() {
                 }
               >
                 <Lanyard
-                  frontImage={personalInfo.profileImage}
-                  backImage={personalInfo.profileImage}
-                  cardColor={theme === 'dark' ? '#18181b' : '#ffffff'}
-                  strapColor={theme === 'dark' ? '#111114' : '#222226'}
-                  metal={theme === 'dark' ? 'graphite' : 'silver'}
-                  finish="matte"
-                  size={0.62}
-                  strapLength={0.48}
-                  gravity={1.1}
-                  damping={0.65}
-                  elasticity={0.4}
-                  breeze={0.2}
-                  interactive={true}
-                  intro={true}
+                  frontImage={image1}
+                  backImage={image1}
+                  strapImage="/band.png"
+                  imageFit="cover"
+                  cardColor="#ffffff"
+                  orientation="portrait"
+                  finish="glossy"
+                  cornerRadius={0.3}
+                  size={0.6}
+                  anchor="center"
+                  strapLength={0.5}
+                  strapColor="#111111"
+                  strapWidth={0.65}
+                  metal="silver"
+                  gravity={1}
+                  damping={0.5}
+                  elasticity={0.5}
+                  breeze={0.5}
+                  interactive
+                  intro
                 />
               </Suspense>
             </div>

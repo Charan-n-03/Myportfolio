@@ -989,3 +989,4 @@ const TechText = ({
 };
 
 export default TechText;
+

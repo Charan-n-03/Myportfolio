@@ -12,8 +12,8 @@ export const personalInfo = {
   email: 'charann539@gmail.com',
   summary:
     'Enthusiastic and detail-oriented aspiring Software Developer with a solid foundation in Python, Java, SQL, and JavaScript. Experienced in developing responsive web interfaces with React JS, architecting backend services with Flask, and designing relational schemas in MySQL with disciplined Git workflows.',
-  profileImage: '/assets/profile.png',
-  fallbackImage: '/assets/profile.png',
+  profileImage: '../assets/profile1.png',
+  fallbackImage: '../assets/profile1.png',
   socialLinks: [
     {
       name: 'GitHub',
@@ -120,3 +120,4 @@ export const personalInterests = [
     description: 'Exercising strategic foresight, analytical problem solving, and calculated decision-making.'
   }
 ];
+
