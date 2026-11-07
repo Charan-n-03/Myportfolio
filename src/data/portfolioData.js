@@ -91,7 +91,7 @@ export const educationHistory = [
     degree: 'Bachelor of Engineering in Computer Science',
     institution: 'Government Engineering College, Ramanagar',
     period: '2022 – 2026',
-    score: 'CGPA: 7.1 / 10',
+    score: 'CGPA: 7.29 / 10',
     details: 'Focus on core computer science foundations, algorithms, data structures, database management systems, and software engineering methodologies.'
   },
   {
